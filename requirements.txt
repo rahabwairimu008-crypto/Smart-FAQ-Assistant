@@ -1,0 +1,22 @@
+# Core NLP / grammar / parsing
+nltk==3.9.1
+
+# Parse tree image rendering (used by parser.py's save-to-PNG feature)
+matplotlib==3.9.2
+
+# --- Voice interface (voice_interface.py) ---
+# Speech-to-text (uses Google Web Speech API by default -- needs internet)
+SpeechRecognition==3.10.4
+# Text-to-speech (offline, uses the system's espeak/nsss/sapi5 engine)
+pyttsx3==2.98
+# Microphone audio capture for SpeechRecognition.
+# NOTE: PyAudio often needs system-level build tools before it will
+# install correctly:
+#   Windows : pip install pyaudio        (usually just works)
+#   macOS   : brew install portaudio && pip install pyaudio
+#   Linux   : sudo apt install portaudio19-dev && pip install pyaudio
+PyAudio==0.2.14
+
+# --- WhatsApp integration (whatsapp_bot.py) ---
+Flask==3.0.3
+twilio==9.3.7
