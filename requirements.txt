@@ -7,6 +7,14 @@ matplotlib==3.9.2
 # --- Voice interface (voice_interface.py) ---
 # Speech-to-text (uses Google Web Speech API by default -- needs internet)
 SpeechRecognition==3.10.4
+# Python 3.13 removed the 'aifc' and 'audioop' standard-library modules
+# that SpeechRecognition still imports internally. These two packages
+# restore them as installable backports. The markers mean pip will
+# automatically SKIP installing these on Python < 3.13, where the
+# modules are still built in -- so this line is safe to leave in for
+# everyone, not just Python 3.13 users.
+standard-aifc; python_version >= "3.13"
+audioop-lts; python_version >= "3.13"
 # Text-to-speech (offline, uses the system's espeak/nsss/sapi5 engine)
 pyttsx3==2.98
 # Microphone audio capture for SpeechRecognition.
